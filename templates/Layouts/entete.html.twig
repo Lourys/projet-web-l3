@@ -1,0 +1,9 @@
+<header>
+  {% if user is null %}
+    <img src="{{ asset('img/guest.png') }}" alt="img_guest"/>
+  {% elseif not user.getIsAdmin() %}
+    <img src="{{ asset('img/loggedin.png') }}" alt="img_loggedin"/>
+  {% else %}
+    <img src="{{ asset('img/admin.png') }}" alt="img_admin"/>
+  {% endif %}
+</header>

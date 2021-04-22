@@ -1,0 +1,38 @@
+{% block stylesheets %}
+  <style>
+    p {
+      display: inline-block;
+    }
+
+    ul {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: inline-block;
+    }
+  </style>
+{% endblock %}
+
+<p>Il y a {{ nb_produits }} produit(s) distinct(s) sur le site</p>
+|
+<ul>
+  <li><a href="{{ path('accueil') }}">Acceuil</a> /</li>
+  {% if user is null %}
+    <li><a href="{{ path('connexion') }}">Connexion</a> /</li>
+    <li><a href="{{ path('inscription') }}">Inscription</a></li>
+  {% else %}
+    {% if user.getIsAdmin() %}
+      <li><a href="{{ path('clients') }}">Liste des utilisateurs</a> /</li>
+      <li><a href="{{ path('ajouter_produit') }}">Créer un produit</a> /</li>
+      <li><a href="https://fr.wikipedia.org/wiki/Amour_et_Amn%C3%A9sie">Amour & Amnésie</a> /</li>
+    {% else %}
+      <li><a href="{{ path('compte') }}">Gérer mon compte</a> /</li>
+      <li><a href="{{ path('produits') }}">Liste des produits</a> /</li>
+      <li><a href="{{ path('panier') }}">Gérer mon panier</a> /</li>
+    {% endif %}
+    <li><a href="{{ path('deconnexion') }}">Déconnexion</a></li>
+  {% endif %}
+</ul>

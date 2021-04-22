@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+}
+#menu {
+  text-align: center;
+}
+#flash {
+  text-align: center;
+}
+#content {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+img {
+  width: 100%;
+}
+footer {
+  margin-top: 5rem;
+}

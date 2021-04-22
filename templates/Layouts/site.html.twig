@@ -1,0 +1,27 @@
+{% extends 'Layouts/base.html.twig' %}
+
+{% block head %}
+  {% block stylesheets %}{% endblock %}
+  {% block javascripts %}{% endblock %}
+{% endblock %}
+
+{% block body %}
+  {{ render(controller('App\\Controller\\BaseController::header')) }}
+  <div id="menu">
+    {{ render(controller('App\\Controller\\BaseController::menu')) }}
+  </div>
+  {% for message in app.flashes('success') %}
+    <div id="flash">
+      <b>Succès :</b> {{ message }}
+    </div>
+  {% endfor %}
+  {% for message in app.flashes('error') %}
+    <div id="flash">
+      <b>Erreur :</b> {{ message }}
+    </div>
+  {% endfor %}
+  <div id="content">
+    {% block content %}{% endblock %}
+  </div>
+  {% include 'Layouts/piedpage.html.twig' %}
+{% endblock %}

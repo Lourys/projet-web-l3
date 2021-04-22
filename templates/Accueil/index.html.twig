@@ -1,0 +1,18 @@
+{% extends 'Layouts/site.html.twig' %}
+
+{% block content %}
+  <h1>Bienvenue sur notre site</h1>
+  <p>
+    Vous êtes connecté.e en tant
+    {% if user is null %}
+      qu'invité.e
+    {% elseif not user.getIsAdmin() %}
+      que membre
+    {% else %}
+      qu'administrateur
+    {% endif %}
+    <br>
+    <br>
+    <i>{{ reverseWelcome }}</i>
+  </p>
+{% endblock %}

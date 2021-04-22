@@ -1,0 +1,38 @@
+{% extends 'Layouts/site.html.twig' %}
+
+{% block stylesheets %}
+  <style>
+    td {
+      text-align: center;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <h1>Mon panier</h1>
+  <form action="" method="post">
+    <table style="width:100%">
+      <tr>
+        <th>Produit</th>
+        <th>Quantité</th>
+        <th>Prix total</th>
+        <th>Action</th>
+      </tr>
+      {% for panier in paniers %}
+        <tr>
+          <td>{{ panier.produit.libelle }}</td>
+          <td>{{ panier.quantite }}</td>
+          <td>{{ panier.produit.prix * panier.quantite }}</td>
+          <td>
+            <button type="submit" name="panierId" value="{{ panier.id }}">Retirer du panier</button>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+    {% if paniers is not empty %}
+      <button type="submit" name="vider" value="1">Vider le panier</button>
+      <button type="submit" name="commander" value="1">Commander</button>
+    {% endif %}
+  </form>
+
+{% endblock %}

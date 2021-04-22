@@ -1,0 +1,45 @@
+{% extends 'Layouts/site.html.twig' %}
+
+{% block stylesheets %}
+  <style>
+    td {
+      text-align: center;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px 0;
+      margin: 25px 0 0;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <h1>Liste des produits</h1>
+  <form action="" method="post">
+    <table style="width:100%">
+      <tr>
+        <th>Libellé</th>
+        <th>Prix/u</th>
+        <th>Quantité en stock</th>
+        <th>Quantité souhaitée</th>
+      </tr>
+      {% for produit in produits %}
+        <tr>
+          <td>{{ produit.libelle }}</td>
+          <td>{{ produit.prix }}</td>
+          <td>{{ produit.getQuantiteStock() }}</td>
+          <td>
+            <select name="quantite[{{ produit.id }}]">
+              {% for i in 0..produit.getQuantiteStock() %}
+                <option value="{{ i }}">{{ i }}</option>
+              {% endfor %}
+            </select>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+    <button type="submit">Ajouter au panier</button>
+  </form>
+
+{% endblock %}

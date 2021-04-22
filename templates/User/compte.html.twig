@@ -1,0 +1,15 @@
+{% extends 'Layouts/site.html.twig' %}
+
+{% block stylesheets %}
+  <style>
+    label {
+      display: block;
+      font-weight: bold;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <h1>Modifier mes informations</h1>
+  {{ form(registerForm) }}
+{% endblock %}

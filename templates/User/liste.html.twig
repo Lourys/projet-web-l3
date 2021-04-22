@@ -1,0 +1,39 @@
+{% extends 'Layouts/site.html.twig' %}
+
+{% block stylesheets %}
+  <style>
+    td {
+      text-align: center;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <h1>Liste des utilisateurs</h1>
+  <form action="" method="post">
+    <table style="width:100%">
+      <tr>
+        <th>Identifiant</th>
+        <th>Mot de passe</th>
+        <th>NOM Prenom</th>
+        <th>Date de naissance</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+      {% for user in users %}
+        <tr>
+          <td>{{ user.identifiant }}</td>
+          <td>{{ user.getMotDePasse() }}</td>
+          <td>{{ user.nom | upper }} {{ user.prenom | capitalize }}</td>
+          <td>{{ user.anniversaire | date }}</td>
+          <td>{{ user.getIsAdmin() ? 'Administrateur' : 'Client' }}</td>
+          <td>
+            <button type="submit" name="userId" value="{{ user.id }}"
+                    {% if currentUser.id == user.id %}disabled{% endif %}>Supprimer l'utilisateur
+            </button>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </form>
+{% endblock %}
