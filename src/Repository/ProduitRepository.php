@@ -48,3 +48,9 @@ class ProduitRepository extends ServiceEntityRepository
     }
     */
 }
+
+
+/**
+ * GETREAU Lucas
+ * CHAKARA Ibrahim
+ */

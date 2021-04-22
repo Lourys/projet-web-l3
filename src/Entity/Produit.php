@@ -74,3 +74,9 @@ class Produit
         return $this;
     }
 }
+
+
+/**
+ * GETREAU Lucas
+ * CHAKARA Ibrahim
+ */

@@ -76,3 +76,9 @@ class Panier
         return $this;
     }
 }
+
+
+/**
+ * GETREAU Lucas
+ * CHAKARA Ibrahim
+ */

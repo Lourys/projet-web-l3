@@ -48,3 +48,9 @@ class UtilisateurRepository extends ServiceEntityRepository
     }
     */
 }
+
+
+/**
+ * GETREAU Lucas
+ * CHAKARA Ibrahim
+ */

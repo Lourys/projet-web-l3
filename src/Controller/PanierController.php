@@ -97,3 +97,9 @@ class PanierController extends BaseController
         $em->flush();
     }
 }
+
+
+/**
+ * GETREAU Lucas
+ * CHAKARA Ibrahim
+ */

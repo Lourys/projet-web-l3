@@ -103,6 +103,10 @@ class UserController extends BaseController
             'registerForm' => $form->createView()
         ]);
     }
-
-
 }
+
+
+/**
+ * GETREAU Lucas
+ * CHAKARA Ibrahim
+ */

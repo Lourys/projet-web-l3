@@ -125,3 +125,9 @@ class ProductController extends BaseController
         ]);
     }
 }
+
+
+/**
+ * GETREAU Lucas
+ * CHAKARA Ibrahim
+ */

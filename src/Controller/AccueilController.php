@@ -22,3 +22,9 @@ class AccueilController extends BaseController
         ]);
     }
 }
+
+
+/**
+ * GETREAU Lucas
+ * CHAKARA Ibrahim
+ */

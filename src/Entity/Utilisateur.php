@@ -167,3 +167,9 @@ class Utilisateur
         return $this;
     }
 }
+
+
+/**
+ * GETREAU Lucas
+ * CHAKARA Ibrahim
+ */

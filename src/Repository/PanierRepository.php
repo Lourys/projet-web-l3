@@ -48,3 +48,9 @@ class PanierRepository extends ServiceEntityRepository
     }
     */
 }
+
+
+/**
+ * GETREAU Lucas
+ * CHAKARA Ibrahim
+ */

@@ -82,3 +82,9 @@ class AuthController extends BaseController
         return $this->redirectToRoute('accueil');
     }
 }
+
+
+/**
+ * GETREAU Lucas
+ * CHAKARA Ibrahim
+ */
