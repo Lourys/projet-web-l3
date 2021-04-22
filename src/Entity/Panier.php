@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=PanierRepository::class)
+ * @ORM\Table(name="im2021_panier")
  */
 class Panier
 {

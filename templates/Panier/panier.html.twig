@@ -18,11 +18,13 @@
         <th>Prix total</th>
         <th>Action</th>
       </tr>
+      {% set total = 0 %}
       {% for panier in paniers %}
+        {% set total = total + panier.produit.prix * panier.quantite %}
         <tr>
           <td>{{ panier.produit.libelle }}</td>
           <td>{{ panier.quantite }}</td>
-          <td>{{ panier.produit.prix * panier.quantite }}</td>
+          <td>{{ panier.produit.prix * panier.quantite }} €</td>
           <td>
             <button type="submit" name="panierId" value="{{ panier.id }}">Retirer du panier</button>
           </td>
@@ -30,6 +32,7 @@
       {% endfor %}
     </table>
     {% if paniers is not empty %}
+      <p><b>Prix total :</b> {{ total }} €</p>
       <button type="submit" name="vider" value="1">Vider le panier</button>
       <button type="submit" name="commander" value="1">Commander</button>
     {% endif %}

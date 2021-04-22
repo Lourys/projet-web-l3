@@ -27,7 +27,7 @@
       {% for produit in produits %}
         <tr>
           <td>{{ produit.libelle }}</td>
-          <td>{{ produit.prix }}</td>
+          <td>{{ produit.prix }} €</td>
           <td>{{ produit.getQuantiteStock() }}</td>
           <td>
             <select name="quantite[{{ produit.id }}]">
